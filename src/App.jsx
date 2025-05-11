@@ -3,45 +3,17 @@ import './App.css'
 import { sculptureList } from './assets/data';
 
 function App() {
-  
-
   return (
-    <>
-      <Gallery></Gallery>
-    </>
-  )
+    <Greeting text={"Hello world!"}/>
+  );
 }
 
 export default App
 
-export function Gallery() {
-  const [index, setIndex] = useState(0);
-
-  function handleClick() {
-    setIndex(index + 1);
-  }
-
-  let sculpture = sculptureList[index];
-
+export function Greeting({text}) {
   return (
-    <>
-      <button onClick={handleClick}>
-        Next
-      </button>
-      <h2>
-        <i>{sculpture.name} </i>
-        by {sculpture.artist}
-      </h2>
-      <h3>
-        ({index + 1} of {sculptureList.length})
-      </h3>
-      <img
-        src={sculpture.url}
-        alt={sculpture.alt}
-      />
-      <p>
-        {sculpture.description}
-      </p>
-    </>
+    <div>
+      <h1>{text}</h1>
+    </div>
   )
 }
